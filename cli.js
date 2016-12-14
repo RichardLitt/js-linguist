@@ -9,23 +9,19 @@ var cli = meow([`
     $ linguist
 
   Options
-    --stdout, -s  Print to stdout instead of json. [Default: false]
+    --stdout, -s  Print normal result to stdout instead of json. [Default: false]
 
   Examples
     $ linguist
     {JavaScript: 100}
     $ linguist -s
     100% JavaScript
-`, {
+`], {
   alias: {
     s: "stdout"
   }
-}])
+})
 
-linguist({}, function (data) {
-  if (cli.flags.stdout) {
-    console.log(data)
-  } else {
-    return data
-  }
+linguist(cli.flags, (data) => {
+  console.log(data)
 })

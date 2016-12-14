@@ -5,6 +5,8 @@
 
 > Get GitHub Linguist data for a repository
 
+This is a wrapper around GitHub's [linguist](https://github.com/github/linguist). That will need to be installed for this to work.
+
 ## Install
 
 ```
@@ -16,29 +18,15 @@ $ npm install --save js-linguist
 ```js
 const jsLinguist = require('js-linguist');
 
-jsLinguist('unicorns');
-//=> 'unicorns & rainbows'
+jsLinguist();
+//=> {JavaScript: '100'}
 ```
 
-## API
+### Options
 
-### jsLinguist(input, [options])
+#### s, stdout
 
-#### input
-
-Type: `string`
-
-Lorem ipsum.
-
-#### options
-
-##### foo
-
-Type: `boolean`  
-Default: `false`
-
-Lorem ipsum.
-
+Print the response from `linguist` directly, instead of as a JSON object.
 
 ## CLI
 
@@ -50,16 +38,16 @@ $ npm install --global js-linguist
 $ js-linguist --help
 
   Usage
-    js-linguist [input]
+    $ linguist
 
   Options
-    --foo  Lorem ipsum. [Default: false]
+    --stdout, -s  Print normal result to stdout instead of json. [Default: false]
 
   Examples
-    $ js-linguist
-    unicorns & rainbows
-    $ js-linguist ponies
-    ponies & rainbows
+    $ linguist
+    {JavaScript: 100}
+    $ linguist -s
+    100% JavaScript
 ```
 
 ## Contribute
@@ -68,4 +56,4 @@ PRs accepted. Check out the [issues](https://github.com/RichardLitt/js-linguist/
 
 ## License
 
-MIT © [Richard Littauer](http://burntfen.com)
+[MIT](license) © 2016 [Richard Littauer](http://burntfen.com)

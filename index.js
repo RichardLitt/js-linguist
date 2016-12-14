@@ -3,7 +3,6 @@ const exec = require('child_process').exec
 const parse = require('./parse')
 
 function main (opts, cb) {
-  // TODO Add opts
   opts = opts || {}
 
   exec('linguist', function (err, stdout, stderr) {
@@ -11,8 +10,13 @@ function main (opts, cb) {
       console.log(err)
     }
 
+
     if (stdout) {
-      return cb(parse.trimLinguistOutput(stdout))
+      if (opts && opts.stdout) {
+        return cb(stdout)
+      } else {
+        return cb(parse.trimLinguistOutput(stdout))
+      }
     }
   })
 }
