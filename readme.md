@@ -1,5 +1,7 @@
 # js-linguist
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/RichardLitt/js-linguist.svg)](https://greenkeeper.io/)
+
 [![Build Status](https://travis-ci.org/RichardLitt/js-linguist.svg?branch=master)](https://travis-ci.org/RichardLitt/js-linguist)
 [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
